@@ -7,7 +7,7 @@ from PIL import Image
 current_dir = Path(__file__).parent if "__file__" in locals() else Path.cwd()
 css_file = current_dir / "styles" / "main.css"
 resume_file = current_dir / "assets" / "CV.pdf"
-profile_pic = current_dir / "assets" / "profile-pic.png"
+SimonaPanikova = current_dir / "assets" / "SimonaPanikova.jpg"
 
 # --- GENERAL SETTINGS ---
 PAGE_TITLE = "Digital CV | John Doe"
@@ -52,7 +52,7 @@ with open(resume_file, "rb") as pdf_file:
     PDFbyte = pdf_file.read()
 
 # --- PROFIL PIC
-profile_pic = Image.open(profile_pic)
+SimonaPanikova = Image.open(SimonaPanikova)
 
 with st.sidebar:
     my_radio = st.radio("Wow effect radio button", list(SECTIONS.keys()))
@@ -61,8 +61,7 @@ with st.sidebar:
 # --- HERO SECTION ---
 col1, col2 = st.columns(2, gap="small")
 with col1:
-    st.image(profile_pic, width=230)
-
+    st.image(SimonaPanikova, width=230)
 with col2:
     st.title(NAME)
     st.write(DESCRIPTION)
